@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --ff-monospace: "Space Mono", monospace;
+  --ff-base-size: 10px;
+  --transition: 300ms ease;
+}
+
+html {
+  font-size: var(--ff-base-size);
+}
+
+body,
+body.dark {
+  background-color: var(--bg);
+  min-height: 100vh;
+  padding: 15rem 0 17rem 0;
+
+  font-family: var(--ff-monospace);
+
+  background-color: var(--bg);
+
+  /* Darkmode */
+  --primary: #0079ff;
+  --primary-hover: #60abff;
+
+  --txt-high-contrast: #fff;
+  --txt-mid-contrast: #ffff;
+  --txt-low-contrast: #fff;
+
+  --txt-search: #fff;
+  --txt-search-placeholder: #fff;
+
+  --bg: #141d2f;
+  --bg-secondary: #1e2a47;
+
+  --theme-switch-btn-hover: #90a4d4;
+
+  /* Neutral */
+  --error: #f74646;
+
+  color: var(--txt-high-contrast);
+  background-color: var(--bg);
+  transition: background var(--transition), color var(--transition);
+}
+
+body.light {
+  background-color: var(--bg);
+
+  /* Lightmode */
+  --primary: #0079ff;
+  --primary-hover: #60abff;
+
+  --txt-high-contrast: #2b3442;
+  --txt-mid-contrast: #4b6a9b;
+  --txt-low-contrast: #697c9a;
+
+  --txt-search: #222731;
+  --txt-search-placeholder: #4b6a9b;
+
+  --bg: #f6f8ff;
+  --bg-secondary: #fefefe;
+
+  --theme-switch-btn-hover: #222731;
+
+  /* Neutral */
+  --error: #f74646;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
