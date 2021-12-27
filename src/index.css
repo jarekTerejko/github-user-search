@@ -23,9 +23,7 @@ body.dark {
   background-color: var(--bg);
   min-height: 100vh;
   padding: 15rem 0 17rem 0;
-
   font-family: var(--ff-monospace);
-
   background-color: var(--bg);
 
   /* Darkmode */
@@ -73,6 +71,13 @@ body.light {
 
   /* Neutral */
   --error: #f74646;
+}
+
+@media screen and (max-width: 400px) {
+  body,
+  body.dark {
+    padding: 3rem 0 5rem 0;
+  }
 }
 
 img {

@@ -3,8 +3,6 @@ import { ImageEl } from "../Image/ImageEl";
 import {
   UserInnerWrapper,
   UserWrapper,
-  UserColLeft,
-  UserColRight,
   UserColRightAvatar,
   UserColRightPartOne,
   UserColRightPartThree,
@@ -41,72 +39,72 @@ const User = ({ data, theme, isSubmited, fetchError, isLoading }) => {
         <UserWrapper>
           <ContainerEl>
             <UserInnerWrapper theme={theme}>
-              <UserColLeft>
-                <UserColRightAvatar src={data.avatar_url} />
-              </UserColLeft>
-              <UserColRight>
-                <UserColRightPartOne>
-                  <UserName>{data.name}</UserName>
-                  <UserYear>{formatDate()}</UserYear>
-                  <UserLogin>@{data.login}</UserLogin>
-                  <UserBio>
-                    {data.bio ? data.bio : "This profile has no bio"}
-                  </UserBio>
-                </UserColRightPartOne>
-                <UserColRightPartTwo>
-                  <UserStats>
-                    <UserStatsItem>
-                      <UserStatsItemHeader>repos</UserStatsItemHeader>
-                      <UserStatsItemData>{data.public_repos}</UserStatsItemData>
-                    </UserStatsItem>
-                    <UserStatsItem>
-                      <UserStatsItemHeader>followers</UserStatsItemHeader>
-                      <UserStatsItemData>{data.followers}</UserStatsItemData>
-                    </UserStatsItem>
-                    <UserStatsItem>
-                      <UserStatsItemHeader>following</UserStatsItemHeader>
-                      <UserStatsItemData>{data.following}</UserStatsItemData>
-                    </UserStatsItem>
-                  </UserStats>
-                  <UserMoreInfo>
-                    <UserMoreInfoItem>
-                      <ImageEl src={Location} alt="" />
-                      {data.location ? data.location : "Not available"}
-                    </UserMoreInfoItem>
-                    <UserMoreInfoItem>
-                      <ImageEl src={Twitter} alt="" />
-                      {data.twitter_username ? (
-                        <UserMoreInfoLink
-                          href={`https://twitter.com/${data.twitter_username}`}
-                          target="_blank"
-                          rel="noreferrer"
-                        >{`@${data.twitter_username}`}</UserMoreInfoLink>
-                      ) : (
-                        "Not available"
-                      )}
-                    </UserMoreInfoItem>
-                    <UserMoreInfoItem>
-                      <ImageEl src={Website} alt="" />
-                      {data.blog ? (
-                        <UserMoreInfoLink
-                          href={data.blog}
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          Website
-                        </UserMoreInfoLink>
-                      ) : (
-                        "Not available"
-                      )}
-                    </UserMoreInfoItem>
-                    <UserMoreInfoItem>
-                      <ImageEl src={Company} alt="" />
-                      {data.company ? data.company : "Not available"}
-                    </UserMoreInfoItem>
-                  </UserMoreInfo>
-                </UserColRightPartTwo>
-                <UserColRightPartThree></UserColRightPartThree>
-              </UserColRight>
+              <UserColRightAvatar src={data.avatar_url} />
+              <UserColRightPartOne>
+                <UserName>{data.name}</UserName>
+                <UserYear>{formatDate()}</UserYear>
+                <UserLogin>@{data.login}</UserLogin>
+                <UserBio largeScreen>
+                  {data.bio ? data.bio : "This profile has no bio"}
+                </UserBio>
+              </UserColRightPartOne>
+              <UserBio smallScreen>
+                {data.bio ? data.bio : "This profile has no bio"}
+              </UserBio>
+              <UserColRightPartTwo>
+                <UserStats>
+                  <UserStatsItem>
+                    <UserStatsItemHeader>repos</UserStatsItemHeader>
+                    <UserStatsItemData>{data.public_repos}</UserStatsItemData>
+                  </UserStatsItem>
+                  <UserStatsItem>
+                    <UserStatsItemHeader>followers</UserStatsItemHeader>
+                    <UserStatsItemData>{data.followers}</UserStatsItemData>
+                  </UserStatsItem>
+                  <UserStatsItem>
+                    <UserStatsItemHeader>following</UserStatsItemHeader>
+                    <UserStatsItemData>{data.following}</UserStatsItemData>
+                  </UserStatsItem>
+                </UserStats>
+              </UserColRightPartTwo>
+              <UserColRightPartThree>
+                <UserMoreInfo>
+                  <UserMoreInfoItem isAvailable={data.location}>
+                    <ImageEl src={Location} alt="" />
+                    {data.location ? data.location : "Not available"}
+                  </UserMoreInfoItem>
+                  <UserMoreInfoItem isAvailable={data.twitter_username}>
+                    <ImageEl src={Twitter} alt="" />
+                    {data.twitter_username ? (
+                      <UserMoreInfoLink
+                        href={`https://twitter.com/${data.twitter_username}`}
+                        target="_blank"
+                        rel="noreferrer"
+                      >{`@${data.twitter_username}`}</UserMoreInfoLink>
+                    ) : (
+                      "Not available"
+                    )}
+                  </UserMoreInfoItem>
+                  <UserMoreInfoItem isAvailable={data.blog}>
+                    <ImageEl src={Website} alt="" />
+                    {data.blog ? (
+                      <UserMoreInfoLink
+                        href={data.blog}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Website
+                      </UserMoreInfoLink>
+                    ) : (
+                      "Not available"
+                    )}
+                  </UserMoreInfoItem>
+                  <UserMoreInfoItem isAvailable={data.company}>
+                    <ImageEl src={Company} alt="" />
+                    {data.company ? data.company : "Not available"}
+                  </UserMoreInfoItem>
+                </UserMoreInfo>
+              </UserColRightPartThree>
             </UserInnerWrapper>
           </ContainerEl>
         </UserWrapper>

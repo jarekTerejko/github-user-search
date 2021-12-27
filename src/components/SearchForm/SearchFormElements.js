@@ -29,15 +29,17 @@ export const SearchFormInput = styled.input`
   font-family: var(--ff-monospace);
 
   @media screen and (max-width: 500px) {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     padding: 0.8rem 0.8rem 0.8rem 5rem;
   }
+
   &::placeholder {
     color: var(--txt-search-placeholder);
     font-size: 1.6rem;
     font-family: var(--ff-monospace);
+
     @media screen and (max-width: 500px) {
-      font-size: 1.6rem;
+      font-size: 1rem;
     }
   }
 `;
@@ -47,9 +49,7 @@ export const SearchFormBtn = styled.button`
   padding: 1.3rem 2rem;
   border-radius: 1rem;
   font-size: 1.6rem;
-
   background: var(--primary);
-
   color: var(--txt-high-contrast);
   font-weight: bold;
   font-family: var(--ff-monospace);
@@ -60,8 +60,10 @@ export const SearchFormBtn = styled.button`
   &:hover {
     background: var(--primary-hover);
   }
+
   @media screen and (max-width: 500px) {
-    padding: 0.8rem 2rem;
+    padding: 0.8rem 1rem;
+    font-size: 1.2rem;
   }
 `;
 
@@ -69,6 +71,7 @@ export const SearchFormImg = styled.img`
   position: absolute;
   top: 23px;
   left: 30px;
+
   @media screen and (max-width: 500px) {
     top: 18px;
     left: 20px;
@@ -80,4 +83,8 @@ export const SearchFormErrorMsg = styled.span`
   position: absolute;
   bottom: 0;
   left: 70px;
+
+  @media screen and (max-width: 500px) {
+    left: 60px;
+  }
 `;
