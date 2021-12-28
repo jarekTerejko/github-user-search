@@ -19,6 +19,7 @@ import {
   UserMoreInfoItem,
   UserMoreInfoLink,
 } from "./UserElements";
+import Loader from "../Loader";
 
 import Location from "../../images/icon-location.svg";
 import Website from "../../images/icon-website.svg";
@@ -35,6 +36,7 @@ const User = ({ data, theme, isSubmited, fetchError, isLoading }) => {
 
   return (
     <>
+      {isLoading ? <Loader /> : null}
       {data !== null ? (
         <UserWrapper>
           <ContainerEl>

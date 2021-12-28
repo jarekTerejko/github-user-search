@@ -4,7 +4,6 @@ import SearchForm from "./components/SearchForm";
 import User from "./components/User";
 
 function App() {
-
   const octocat = {
     login: "octocat",
     id: 583231,
@@ -43,8 +42,7 @@ function App() {
 
   const [data, setData] = useState(null);
   const [isSubmited, setIsSubmited] = useState(false);
-
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [fetchErrorValue, setFetchErrorValue] = useState("");
   const [fetchError, setFetchError] = useState(false);
   const [theme, setTheme] = useState("dark");
@@ -97,7 +95,7 @@ function App() {
   };
 
   useEffect(() => {
-     getData("https://api.github.com/users/octocat");
+    getData("https://api.github.com/users/octocat");
     // return () => {
     //   cleanup
     // }
