@@ -1,7 +1,8 @@
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export const NavbarWrapper = styled.nav``;
+export const NavbarWrapper = styled(motion.nav)``;
 export const NavbarInnerWrapper = styled.div`
   display: flex;
   align-items: center;
