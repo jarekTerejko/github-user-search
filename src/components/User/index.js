@@ -50,7 +50,10 @@ const User = ({ data, theme, isSubmited, fetchError, isLoading }) => {
           >
             <ContainerEl>
               <UserInnerWrapper theme={theme}>
-                <UserColRightAvatar src={data.avatar_url} />
+                <UserColRightAvatar
+                  src={data.avatar_url}
+                  alt={`${data.name} avatar`}
+                />
                 <UserColRightPartOne>
                   <UserName>{data.name}</UserName>
                   <UserYear>{formatDate()}</UserYear>
