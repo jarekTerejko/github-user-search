@@ -1,7 +1,9 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 import { ImageEl } from "../Image/ImageEl";
 
-export const UserWrapper = styled.main`
+
+export const UserWrapper = styled(motion.main)`
   margin-top: 2.5rem;
   border-radius: 1.5rem;
 `;
@@ -188,3 +190,5 @@ export const UserMoreInfoLink = styled.a`
     opacity: 1;
   } */
 `;
+
+export const NoUserWrapper = styled(motion.div)``;
