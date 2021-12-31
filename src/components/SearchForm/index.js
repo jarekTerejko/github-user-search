@@ -19,8 +19,21 @@ const SearchForm = ({
   data,
   theme,
 }) => {
+  const containerVariants = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: { delay: 1 },
+    },
+  };
   return (
-    <SearchFormWrapper initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+    <SearchFormWrapper
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
       <ContainerEl>
         <SearchFormEl onSubmit={handleSubmit} theme={theme}>
           <SearchFormInput
@@ -30,7 +43,7 @@ const SearchForm = ({
             name="github-search"
             placeholder="Search GitHub username..."
           />
-          <SearchFormBtn>Search</SearchFormBtn>
+          <SearchFormBtn whileTap={{ scale: 0.8 }}>Search</SearchFormBtn>
           <SearchFormImg src={SearchIcon} alt="search-icon" />
           {isSubmited && !searchTerm && !fetchError && !isLoading && !data && (
             <SearchFormErrorMsg>

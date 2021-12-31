@@ -44,7 +44,7 @@ export const SearchFormInput = styled.input`
   }
 `;
 
-export const SearchFormBtn = styled.button`
+export const SearchFormBtn = styled(motion.button)`
   border: none;
   padding: 1.3rem 2rem;
   border-radius: 1rem;
