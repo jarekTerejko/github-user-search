@@ -27,7 +27,14 @@ import Website from "../../images/icon-website.svg";
 import Twitter from "../../images/icon-twitter.svg";
 import Company from "../../images/icon-company.svg";
 import { AnimatePresence } from "framer-motion";
-const User = ({ data, theme, isSubmited, fetchError, isLoading }) => {
+const User = ({
+  data,
+  theme,
+  isSubmited,
+  fetchError,
+  isLoading,
+  fetchErrorValue,
+}) => {
   // octocat: data
 
   const formatDate = () => {
@@ -135,6 +142,21 @@ const User = ({ data, theme, isSubmited, fetchError, isLoading }) => {
           >
             <ContainerEl>
               <UserName noUser>There is no such username</UserName>
+            </ContainerEl>
+          </NoUserWrapper>
+        )}
+      </AnimatePresence>
+      <AnimatePresence exitBeforeEnter>
+        {!data && fetchError && !isLoading && (
+          <NoUserWrapper
+            key={fetchError}
+            transition={{ delay: 0.5 }}
+            initial={{ y: 60, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 60, opacity: 0 }}
+          >
+            <ContainerEl>
+              <UserName noUser>{fetchErrorValue}</UserName>
             </ContainerEl>
           </NoUserWrapper>
         )}

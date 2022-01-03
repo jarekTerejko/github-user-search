@@ -69,6 +69,9 @@ function App() {
     if (isSubmited) {
       setIsSubmited(false);
     }
+    if (fetchError) {
+      setFetchError(false);
+    }
     setSearchTerm(e.target.value);
   };
 
@@ -90,7 +93,6 @@ function App() {
       setFetchError(true);
       setFetchErrorValue(error.message);
     }
-
     setIsLoading(false);
   };
 
